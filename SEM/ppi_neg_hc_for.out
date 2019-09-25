@@ -1,0 +1,354 @@
+Mplus VERSION 7
+MUTHEN & MUTHEN
+07/10/2018   9:40 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Multiple Step Multiple Mediator Model
+    DATA:
+    FILE IS data_neg.dat;
+    FORMAT IS free;
+    VARIABLE:
+    NAMES ARE sub p_neg fo_neg a_neg fo_neg2 a_neg2;
+    USEVARIABLES p_neg fo_neg2 a_neg2;
+
+
+
+    ANALYSIS:
+          ESTIMATOR=ML;
+          BOOTSTRAP=1000;
+
+    MODEL:
+    fo_neg2 on a_neg2;
+    p_neg on fo_neg2 a_neg2 ;
+
+
+    MODEL INDIRECT:
+    p_neg IND fo_neg2 a_neg2  ;
+
+
+    OUTPUT:
+    standardized CINTERVAL(BCBOOTSTRAP);
+
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Multiple Step Multiple Mediator Model
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                          28
+
+Number of dependent variables                                    2
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   P_NEG       FO_NEG2
+
+Observed independent variables
+   A_NEG2
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Number of bootstrap draws
+    Requested                                                 1000
+    Completed                                                 1000
+
+Input data file(s)
+  data_neg.dat
+
+Input data format  FREE
+
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        7
+
+Loglikelihood
+
+          H0 Value                         -33.523
+          H1 Value                         -33.523
+
+Information Criteria
+
+          Akaike (AIC)                      81.046
+          Bayesian (BIC)                    90.371
+          Sample-Size Adjusted BIC          68.608
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             22.929
+          Degrees of Freedom                     3
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ FO_NEG2  ON
+    A_NEG2             0.512      0.136      3.756      0.000
+
+ P_NEG    ON
+    FO_NEG2            0.150      0.032      4.701      0.000
+    A_NEG2             0.012      0.052      0.236      0.814
+
+ Intercepts
+    P_NEG              0.494      0.047     10.602      0.000
+    FO_NEG2            0.395      0.175      2.253      0.024
+
+ Residual Variances
+    P_NEG              0.046      0.011      4.043      0.000
+    FO_NEG2            0.820      0.231      3.555      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+                      StdYX       StdY        Std
+                    Estimate   Estimate   Estimate
+
+ FO_NEG2  ON
+    A_NEG2             0.534      0.478      0.512
+
+ P_NEG    ON
+    FO_NEG2            0.591      0.591      0.150
+    A_NEG2             0.050      0.045      0.012
+
+ Intercepts
+    P_NEG              1.812      1.812      0.494
+    FO_NEG2            0.369      0.369      0.395
+
+ Residual Variances
+    P_NEG              0.616      0.616      0.046
+    FO_NEG2            0.715      0.715      0.820
+
+
+R-SQUARE
+
+    Observed
+    Variable        Estimate
+
+    P_NEG              0.384
+    FO_NEG2            0.285
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from A_NEG2 to P_NEG
+
+  Sum of indirect      0.077      0.029      2.657      0.008
+
+  Specific indirect
+
+    P_NEG
+    FO_NEG2
+    A_NEG2             0.077      0.029      2.657      0.008
+
+
+STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from A_NEG2 to P_NEG
+
+  Sum of indirect      0.315      0.111      2.842      0.004
+
+  Specific indirect
+
+    P_NEG
+    FO_NEG2
+    A_NEG2             0.315      0.111      2.842      0.004
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from A_NEG2 to P_NEG
+
+  Sum of indirect      0.282      0.106      2.657      0.008
+
+  Specific indirect
+
+    P_NEG
+    FO_NEG2
+    A_NEG2             0.282      0.106      2.657      0.008
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from A_NEG2 to P_NEG
+
+  Sum of indirect      0.077      0.029      2.657      0.008
+
+  Specific indirect
+
+    P_NEG
+    FO_NEG2
+    A_NEG2             0.077      0.029      2.657      0.008
+
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ FO_NEG2  ON
+    A_NEG2           0.156       0.252       0.294       0.512       0.744       0.794       0.896
+
+ P_NEG    ON
+    FO_NEG2          0.055       0.077       0.095       0.150       0.198       0.208       0.229
+    A_NEG2          -0.140      -0.104      -0.084       0.012       0.087       0.102       0.131
+
+ Intercepts
+    P_NEG            0.380       0.404       0.421       0.494       0.570       0.587       0.621
+    FO_NEG2         -0.060       0.065       0.107       0.395       0.685       0.737       0.843
+
+ Residual Variances
+    P_NEG            0.022       0.027       0.031       0.046       0.068       0.070       0.075
+    FO_NEG2          0.364       0.478       0.538       0.820       1.337       1.458       1.566
+
+
+CONFIDENCE INTERVALS OF TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from A_NEG2 to P_NEG
+
+  Sum of indirect    0.015       0.033       0.038       0.077       0.135       0.145       0.166
+
+  Specific indirect
+
+    P_NEG
+    FO_NEG2
+    A_NEG2           0.015       0.033       0.038       0.077       0.135       0.145       0.166
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT,
+AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from A_NEG2 to P_NEG
+
+  Sum of indirect    0.030       0.098       0.133       0.315       0.498       0.533       0.601
+
+  Specific indirect
+
+    P_NEG
+    FO_NEG2
+    A_NEG2           0.030       0.098       0.133       0.315       0.498       0.533       0.601
+
+
+STDY Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from A_NEG2 to P_NEG
+
+  Sum of indirect    0.009       0.074       0.108       0.282       0.457       0.491       0.556
+
+  Specific indirect
+
+    P_NEG
+    FO_NEG2
+    A_NEG2           0.009       0.074       0.108       0.282       0.457       0.491       0.556
+
+
+STD Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from A_NEG2 to P_NEG
+
+  Sum of indirect    0.002       0.020       0.029       0.077       0.125       0.134       0.152
+
+  Specific indirect
+
+    P_NEG
+    FO_NEG2
+    A_NEG2           0.002       0.020       0.029       0.077       0.125       0.134       0.152
+
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    g:\mgz program\fmri analysis\ppi\sem\ppi_neg_hc_for.dgm
+
+     Beginning Time:  21:40:06
+        Ending Time:  21:40:08
+       Elapsed Time:  00:00:02
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2012 Muthen & Muthen
