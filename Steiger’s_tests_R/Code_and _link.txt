@@ -1,0 +1,4 @@
+r.test(n, r12, r34 = NULL, r23 = NULL, r13 = NULL, r14 = NULL, r24 = NULL, 
+          n2 = NULL,pooled=TRUE, twotailed = TRUE)
+
+Link:https://personality-project.org/r/psych/help/r.test.html
