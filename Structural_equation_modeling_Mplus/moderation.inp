@@ -1,0 +1,23 @@
+TITLE: Multiple Step Multiple Mediator Model
+  DATA:
+  FILE IS data_neg_all.dat;
+  FORMAT IS free;
+  VARIABLE:
+  NAMES ARE sub p_neg fo_neg a_neg f_neg o_neg;
+  USEVARIABLES p_neg fo_neg a_neg int;
+  
+  ! CENTER=GRANDMEAN(fo_neg a_neg);
+
+
+  DEFINE:
+    int=fo_neg*a_neg;
+
+  MODEL:
+  p_neg on fo_neg a_neg;
+  p_neg on int;
+ 
+
+
+  OUTPUT:
+  standardized;
+

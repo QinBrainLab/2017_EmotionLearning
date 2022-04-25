@@ -1,0 +1,63 @@
+VERSION 1.0.0
+INPUT
+TITLE:
+ Multiple Step Multiple Mediator Model
+DATA:
+  FILE IS data_neg_all.dat;
+  FORMAT IS free;
+VARIABLE:
+  NAMES ARE sub p_neg fo_neg a_neg f_neg o_neg;
+  USEVARIABLES p_neg f_neg o_neg a_neg;
+ANALYSIS:
+        ESTIMATOR=ML;
+        BOOTSTRAP=1000;
+OUTPUT:
+  standardized CINTERVAL(BCBOOTSTRAP);
+MODEL:
+  f_neg on a_neg;
+  o_neg on f_neg a_neg;
+  p_neg on o_neg  ;
+INPUT_END
+3
+1
+1
+1
+1
+GENERAL
+0
+3
+0
+1
+p_neg f_neg o_neg a_neg
+4
+3 1 2 0
+0
+0
+1 1 a_neg f_neg    0.517    0.158    0.207    0.827
+1 1 f_neg o_neg    0.753    0.121    0.516    0.989
+1 1 a_neg o_neg    0.414    0.153    0.114    0.714
+1 1 o_neg p_neg    0.117    0.019    0.079    0.154
+4 1 p_neg    0.041    0.009    0.022    0.059
+4 1 f_neg    1.018    0.265    0.498    1.537
+4 1 o_neg    1.075    0.411    0.270    1.880
+11 1 a_neg f_neg    0.497
+11 1 f_neg o_neg    0.558
+11 1 a_neg o_neg    0.295
+11 1 o_neg p_neg    0.671
+14 1 p_neg    0.549
+14 1 f_neg    0.753
+14 1 o_neg    0.438
+21 1 a_neg f_neg    0.445
+21 1 f_neg o_neg    0.558
+21 1 a_neg o_neg    0.264
+21 1 o_neg p_neg    0.671
+24 1 p_neg    0.549
+24 1 f_neg    0.753
+24 1 o_neg    0.438
+31 1 a_neg f_neg    0.517
+31 1 f_neg o_neg    0.753
+31 1 a_neg o_neg    0.414
+31 1 o_neg p_neg    0.117
+34 1 p_neg    0.041
+34 1 f_neg    1.018
+34 1 o_neg    1.075

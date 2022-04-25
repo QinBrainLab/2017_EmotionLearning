@@ -1,0 +1,61 @@
+VERSION 1.0.0
+INPUT
+TITLE:
+ Multiple Step Multiple Mediator Model
+DATA:
+  FILE IS data_neg_all.dat;
+  FORMAT IS free;
+VARIABLE:
+  NAMES ARE sub p_neg fo_neg a_neg f_neg o_neg;
+  USEVARIABLES p_neg fo_neg a_neg int;
+DEFINE:
+    int=fo_neg*a_neg;
+OUTPUT:
+  standardized;
+MODEL:
+  p_neg on fo_neg a_neg;
+  p_neg on int;
+INPUT_END
+2
+2
+2
+2
+1
+GENERAL
+0
+1
+0
+3
+p_neg fo_neg a_neg int
+2
+1 0 0 0
+0
+0
+1 1 fo_neg p_neg    0.148    0.036
+1 1 a_neg p_neg   -0.008    0.043
+1 1 int p_neg   -0.005    0.025
+4 1 p_neg    0.040    0.011
+2 1 fo_neg a_neg  999.000  999.000
+2 1 fo_neg int  999.000  999.000
+2 1 a_neg int  999.000  999.000
+11 1 fo_neg p_neg    0.699    0.140
+11 1 a_neg p_neg   -0.031    0.175
+11 1 int p_neg   -0.030    0.144
+14 1 p_neg    0.540    0.138
+12 1 fo_neg a_neg  999.000  999.000
+12 1 fo_neg int  999.000  999.000
+12 1 a_neg int  999.000  999.000
+21 1 fo_neg p_neg    0.543    0.107
+21 1 a_neg p_neg   -0.028    0.156
+21 1 int p_neg   -0.019    0.090
+24 1 p_neg    0.540    0.138
+22 1 fo_neg a_neg  999.000  999.000
+22 1 fo_neg int  999.000  999.000
+22 1 a_neg int  999.000  999.000
+31 1 fo_neg p_neg    0.148    0.036
+31 1 a_neg p_neg   -0.008    0.043
+31 1 int p_neg   -0.005    0.025
+34 1 p_neg    0.040    0.011
+32 1 fo_neg a_neg  999.000  999.000
+32 1 fo_neg int  999.000  999.000
+32 1 a_neg int  999.000  999.000

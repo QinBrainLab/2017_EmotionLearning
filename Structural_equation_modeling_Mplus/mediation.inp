@@ -1,0 +1,27 @@
+TITLE: Multiple Step Multiple Mediator Model
+  DATA:
+  FILE IS data_neg_all.dat;
+  FORMAT IS free;
+  VARIABLE:
+  NAMES ARE sub p_neg fo_neg a_neg f_neg o_neg;
+  USEVARIABLES p_neg f_neg o_neg a_neg;
+  
+
+
+  ANALYSIS:
+        ESTIMATOR=ML;
+        BOOTSTRAP=1000;
+
+  MODEL:
+  f_neg on a_neg;
+  o_neg on f_neg a_neg;
+  p_neg on o_neg  ;
+ 
+  
+  MODEL INDIRECT:
+  p_neg IND o_neg a_neg  ;
+  p_neg IND o_neg f_neg a_neg  ;
+
+  OUTPUT:
+  standardized CINTERVAL(BCBOOTSTRAP);
+
